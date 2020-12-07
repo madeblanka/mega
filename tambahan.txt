@@ -1,0 +1,5 @@
+1. Grafik jumlah siswa di masing2 sekolah tiap tahun ajaran. Bisa dilihat jumlah siswa perempuan dan laki2
+
+2. Di tahun tabel ajarannya bisa nggak ditampilin jumlah total siswa, jumlah siswa, siswa masuk (siswa baru pindahan), siswa keluar (lulus, mutasi, pindah, mengundurkan diri, dikeluarkan, putus sekolah, wafat, hilang)
+
+4. Sama sekolahnya tak tambahin longitude Dan latitude Untuk lokasinya
