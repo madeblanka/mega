@@ -18,9 +18,9 @@ class Staff_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
     
-    public function getById($id)
+    public function getById($id_staff)
     {
-        return $this->db->get_where($this->_table, ["product_id" => $id])->row();
+        return $this->db->get_where($this->_table, ["id_staff" => $id_staff])->row();
     }
     public function totalstaff()
     {
@@ -29,25 +29,33 @@ class Staff_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->product_id = uniqid();
-        $this->name = $post["name"];
-        $this->price = $post["price"];
-        $this->description = $post["description"];
+        $this->id_staff = $post["id_staff"];
+        $this->id_sekolah = $post["id_sekolah"];
+        $this->nama = $post["nama"];
+        $this->telp = $post["telp"];
+        $this->alamat = $post["alamat"];
+        $this->jabatan = $post["jabatan"];
+        $this->status = $post["status"];
+        $this->jeniskelamin = $post["jeniskelamin"];
         return $this->db->insert($this->_table, $this);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $this->product_id = $post["id"];
-        $this->name = $post["name"];
-        $this->price = $post["price"];
-        $this->description = $post["description"];
-        return $this->db->update($this->_table, $this, array('product_id' => $post['id']));
+        $this->id_staff = $post["id_staff"];
+        $this->id_sekolah = $post["id_sekolah"];
+        $this->nama = $post["nama"];
+        $this->telp = $post["telp"];
+        $this->alamat = $post["alamat"];
+        $this->jabatan = $post["jabatan"];
+        $this->status = $post["status"];
+        $this->jeniskelamin = $post["jeniskelamin"];
+        return $this->db->update($this->_table, $this, array('id_staff' => $post['id_staff']));
     }
 
-    public function delete($id)
+    public function delete($id_staff)
     {
-        return $this->db->delete($this->_table, array("product_id" => $id));
+        return $this->db->delete($this->_table, array("id_staff" => $id_staff));
     }
 }

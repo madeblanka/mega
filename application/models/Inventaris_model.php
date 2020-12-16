@@ -9,6 +9,8 @@ class Inventaris_model extends CI_Model
     public $nama;
     public $status;
     public $jumlah;
+    public $sumber;
+    public $tahun;
     
     public function getAll()
     {
@@ -28,6 +30,8 @@ class Inventaris_model extends CI_Model
         $this->nama = $post["nama"];
         $this->status = $post["status"];
         $this->jumlah = $post["jumlah"];
+        $this->sumber = $post["sumber"];
+        $this->tahun = $post["tahun"];
         return $this->db->insert($this->_table, $this);
     }
 
@@ -39,6 +43,8 @@ class Inventaris_model extends CI_Model
         $this->nama = $post["nama"];
         $this->status = $post["status"];
         $this->jumlah = $post["jumlah"];
+        $this->sumber = $post["sumber"];
+        $this->tahun = $post["tahun"];
         return $this->db->update($this->_table, $this, array('id_inventaris' => $post['id_inventaris']));
     }
 

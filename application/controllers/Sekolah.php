@@ -6,6 +6,7 @@ class Sekolah extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("Sekolah_model");
+        $this->load->model("Jumlahsiswa_model");
     }
 	private $_table = "tb_sekolah";
 	
@@ -28,7 +29,16 @@ class Sekolah extends CI_Controller {
         $data["sekolah"] = $this->Sekolah_model->getAll();
         $this->load->view("sekolah/dashboard", $data);
     }
-
+	public function tk()
+    {
+        $data["sekolah"] = $this->Sekolah_model->getBytk();
+        $this->load->view("sekolah/jenis", $data);
+    }
+    public function sd()
+    {
+        $data["sekolah"] = $this->Sekolah_model->getBysd();
+        $this->load->view("sekolah/jenis", $data);
+    }
     public function add()
     {
         $sekolah = $this->Sekolah_model;
@@ -46,7 +56,7 @@ class Sekolah extends CI_Controller {
         $this->load->view("sekolah/edit", $data);
 	}
 	public function update(){
-		$this->Sekolah_model->update();
+        $this->Sekolah_model->update();
         redirect(site_url('sekolah/index'));
     }
     public function delete($id_sekolah=null)

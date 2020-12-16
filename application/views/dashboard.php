@@ -234,7 +234,7 @@
                                     <p> <?php foreach ($pengumuman as $pengumuman): ?><?php echo $pengumuman->judul?></p>
                                         <p class="mb-0">  <?php echo $pengumuman->deskripsi?></p>
 
-                                    <a target="_blank" rel="nofollow" href="<?php echo $pengumuman->lampiran?>">Download Lampiran &rarr;</a>
+                                    <a target="_blank" rel="nofollow" href="<?php echo base_url('dashboard/download/'.$pengumuman->lampiran )?>">Download Lampiran &rarr;</a>
                                         <?php endforeach?>
                                 </div>
                                 

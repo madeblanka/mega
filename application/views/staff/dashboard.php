@@ -2,8 +2,8 @@
 <?php $this->load->view("_partials/sidebar.php") ?>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Inventaris</h6>
-            <a href="<?php echo site_url('inventaris/tambah/') ?>"
+            <h6 class="m-0 font-weight-bold text-primary">Data staff</h6>
+            <a href="<?php echo site_url('staff/tambah/') ?>"
                 href="#!"  class="btn btn-outline-success"><strong>Tambah</strong></a>
         </div>
             <div class="card-body">
@@ -11,26 +11,32 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                               <th>id inventaris</th>
+                               <th>id staff</th>
                                <th>id sekolah</th>
                                <th>nama</th>
+                               <th>telp</th>
+                               <th>alamat</th>
+                               <th>jabatan</th>
                                <th>status</th>
-                               <th>jumlah</th>
+                               <th>Jenis Kelamin</th>
                                <th>Actoin</th>
                                
                             </tr>
                         </thead>
-                        <?php foreach ($inventaris as $inventaris): ?>
+                        <?php foreach ($staff as $staff): ?>
                   <tbody>
                       <tr>
-                          <td><?php echo $inventaris->id_inventaris?></td>
-                          <td><?php echo $inventaris->id_sekolah?></td>
-                          <td><?php echo $inventaris->nama?></td>
-                          <td><?php echo $inventaris->status?></td>
-                          <td><?php echo $inventaris->jumlah?></td>                            
-                          <td><a href="<?php echo site_url('inventaris/edit/'.$inventaris->id_inventaris) ?>"
+                          <td><?php echo $staff->id_staff?></td>
+                          <td><?php echo $staff->id_sekolah?></td>
+                          <td><?php echo $staff->nama?></td>
+                          <td><?php echo $staff->telp?></td>
+                          <td><?php echo $staff->alamat?></td>
+                          <td><?php echo $staff->jabatan?></td>
+                          <td><?php echo $staff->status?></td>
+                          <td><?php echo $staff->jeniskelamin?></td>                            
+                          <td><a href="<?php echo site_url('staff/edit/'.$staff->id_staff) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
-                           <a href="<?php echo site_url('inventaris/delete/'.$inventaris->id_inventaris) ?>"
+                           <a href="<?php echo site_url('staff/delete/'.$staff->id_staff) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                           </td>
                       </tr>

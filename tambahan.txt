@@ -3,3 +3,25 @@
 2. Di tahun tabel ajarannya bisa nggak ditampilin jumlah total siswa, jumlah siswa, siswa masuk (siswa baru pindahan), siswa keluar (lulus, mutasi, pindah, mengundurkan diri, dikeluarkan, putus sekolah, wafat, hilang)
 
 4. Sama sekolahnya tak tambahin longitude Dan latitude Untuk lokasinya
+
+
+
+Ini lagi kak 
+1. pisah  sekolah TK sama sekolah SD 
+2. Di tabel tambah siswa, bisa ditambahin menu pilihan status masuk dan keluar siswa masuk (siswa baru pindahan), siswa keluar (lulus, mutasi, pindah, mengundurkan diri, dikeluarkan, putus sekolah, wafat, hilang)
+3. Fitur menampilkan statisik rasio perbandingan jumlah guru dan siswa masing2 sekolah
+4. Menu laporan nya juga 
+6. Ganti logo dinas pendidikan di halaman login 
+7. Di halaman dashboard untuk user pegawai dan pimpinan UPTD pakai logo dinas pendidikan. Kalo di user sekolah pakai logo sekolah 
+8. Tb-staff masih error
+9. Tabel inventaris kurang sumber dan tahun
+
+Jadinya tampilan dashboard untuk :
+1. Pegawai UPTD : TK, SD, User, Pengumuman
+2. Pimpinan UPTD : TK, SD
+3. Sekolah : total guru, staff, siswa, inventaris, mapel
+
+Kalo pimpinan bisa lihat dan print report data sekolah, guru, siswa, staff, inventaris, mapel, pengumuman, jumlah siswa, tapi nggak bisa tambah/edit
+
+Maunya di dashboard admin sama pimpinan itu langsung di tampilin menu SD sama TK. Misalnya, kalo di klik menu SD, tampil pilihan sekolah SD sama grafik sekolah swasta dan negeri. Habis itu kalo di klik salah satu sekolahnya tampil total guru, staff, siswa, inventaris, mapel. 
+Gitu kak

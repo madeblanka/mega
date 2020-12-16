@@ -6,6 +6,7 @@ class Staff extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("Staff_model");
+        $this->load->model("Sekolah_model");
     }
 	private $_table = "tb_staff";
 	
@@ -20,36 +21,38 @@ class Staff extends CI_Controller {
 
 	public function index()
     {
-        $data["inventaris"] = $this->Inventaris_model->getAll();
-        $this->load->view("inventaris/dashboard", $data);
+        $data["staff"] = $this->Staff_model->getAll();
+        $this->load->view("staff/dashboard", $data);
     }
 
     public function add()
     {
-        $inventaris = $this->Inventaris_model;
-            $inventaris->save();
-            redirect(site_url('inventaris/index'));
+        $staff = $this->Staff_model;
+            $staff->save();
+            redirect(site_url('staff/index'));
     }
     public function tambah()
     {
-        $this->load->view('inventaris/tambah');
+       
+        $this->load->view('staff/tambah',$data);
     }
-    public function edit($id_inventaris = null)
+    public function edit($id_staff = null)
     {
-        $inventaris = $this->Inventaris_model;
-        $data["inventaris"] = $inventaris->getById($id_inventaris);
-        $this->load->view("inventaris/edit", $data);
+        $data["sekolah"] = $this->Sekolah_model->getAll();
+        $staff = $this->Staff_model;
+        $data["staff"] = $staff->getById($id_staff);
+        $this->load->view("staff/edit", $data);
 	}
 	public function update(){
-		$this->Inventaris_model->update();
-        redirect(site_url('Inventaris/index'));
+		$this->Staff_model->update();
+        redirect(site_url('staff/index'));
     }
-    public function delete($id_inventaris=null)
+    public function delete($id_staff=null)
     {
-        if (!isset($id_inventaris)) show_404();
+        if (!isset($id_staff)) show_404();
         
-        if ($this->Inventaris_model->delete($id_inventaris)) {
-            redirect(site_url('Inventaris/index'));
+        if ($this->Staff_model->delete($id_staff)) {
+            redirect(site_url('staff/index'));
         }
     }
 }

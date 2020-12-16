@@ -37,11 +37,15 @@
                 </div>
             </div>
             <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Jenis Kelamin</label>
-                    <select class="col-sm-10" class="form-control" name="jeniskelamin">
-                      <option value="Pria">Pria</option>
-                      <option value="Perempuan">Perempuan</option>
-                    </select>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="jeniskelamin">
+                    <optgroup  label="(empty)" id="jeniskelamin">
+                    <option value="Laki-laki">Laki-laki</option>
+                     <option value="Perempuan">Perempuan</option>
+				    </optgroup>
+                   </select>
+                </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">tempat lahir</label>
@@ -68,21 +72,45 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">status masuk</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Status Masuk</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="status_masuk" id="inputPassword" >
+                    <select class="form-control" name="status_masuk">
+                    <optgroup  label="(empty)" id="jeniskelamin">
+                    <option value="Siswa Baru">Siswa Baru</option>
+                     <option value="Siswa Pindahan">Siswa Pindahan</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">status keluar</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Status Keluar</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="status_keluar" id="inputPassword" >
+                    <select class="form-control" name="status_masuk">
+                    <optgroup  label="(empty)" id="status_keluar">
+                    <option value="Siswa Lulus">Siswa Lulus</option>
+                     <option value="Siswa Pindahan">Siswa Pindahan</option>
+                     <option value="Siswa Menundurkan Diri">Siswa Menundurkan Diri</option>
+                     <option value="Siswa Dikeluarkan">Siswa Dikeluarkan</option>
+                     <option value="Siswa Putus Sekolah">Siswa Putus Sekolah</option>
+                     <option value="Siswa Wafat">Siswa Wafat</option>
+                     <option value="Siswa Hilang">Siswa Hilang</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">agama</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Agama</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="agama" id="inputPassword" >
+                    <select class="form-control" name="agama">
+                    <optgroup  label="(empty)" id="jeniskelamin">
+                    <option value="Hindu">Hindu</option>
+                     <option value="Islam">Islam</option>
+                     <option value="Katolik">Katolik</option>
+                     <option value="Buddha">Buddha</option>
+                     <option value="Kristen">Kristen</option>
+                     <option value="Konghucu">Konghucu</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">

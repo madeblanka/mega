@@ -27,7 +27,8 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">lampiran</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="lampiran" id="inputPassword" value="<?php echo $pengumuman->lampiran?>">
+                <input type="file" name="lampiran" id="inputPassword" value="<?php echo $pengumuman->lampiran?>">
+                <input type="hidden" name="lama" value="<?php echo $pengumuman->lampiran ?>" />
                 </div>
             </div>
             <button type="submit" class="btn btn-primary"  onclick="return confirm('Apakah Anda Yakin Ingin Menyimpan Data Ini ?');">Simpan</button>

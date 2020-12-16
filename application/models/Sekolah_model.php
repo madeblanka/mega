@@ -18,12 +18,24 @@ class Sekolah_model extends CI_Model
     public $longtitude;
     public $latitude;
 
+    
     public function getAll()
     {
         return $this->db->get($this->_table)->result();
     }
-    
+    public function getBysd()
+    {
+        return $this->db->get_where($this->_table, ["jenjang" => 'SD'])->row();
+    }
+    public function getBytk()
+    {
+        return $this->db->get_where($this->_table, ["jenjang" => 'TK'])->row();
+    }
     public function getById($id_sekolah)
+    {
+        return $this->db->get_where($this->_table, ["id_sekolah" => $id_sekolah])->row();
+    }
+    public function login($username)
     {
         return $this->db->get_where($this->_table, ["id_sekolah" => $id_sekolah])->row();
     }

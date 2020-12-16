@@ -16,6 +16,8 @@
                                <th>nama</th>
                                <th>status</th>
                                <th>jumlah</th>
+                               <th>sumber</th>
+                               <th>tahun</th>
                                <th>Actoin</th>
                                
                             </tr>
@@ -27,7 +29,9 @@
                           <td><?php echo $inventaris->id_sekolah?></td>
                           <td><?php echo $inventaris->nama?></td>
                           <td><?php echo $inventaris->status?></td>
-                          <td><?php echo $inventaris->jumlah?></td>                            
+                          <td><?php echo $inventaris->jumlah?></td> 
+                          <td><?php echo $inventaris->sumber?></td>
+                          <td><?php echo $inventaris->tahun?></td>                            
                           <td><a href="<?php echo site_url('inventaris/edit/'.$inventaris->id_inventaris) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
                            <a href="<?php echo site_url('inventaris/delete/'.$inventaris->id_inventaris) ?>"

@@ -15,8 +15,8 @@
             <div class="form-group row">
             <label for="inputPassword"  class="col-sm-2 col-form-label">Id Sekolah</label>
                 <div class="col-sm-10">
-                    <select name="idkategori">
-                    <optgroup class="form-control" label="(empty)" id="inputPassword">
+                    <select  class="form-control" name="idkategori">
+                    <optgroup label="(empty)" id="inputPassword">
                      <?php foreach ($sekolah as $sekolah):?>
                      <option value="<?php echo $sekolah->id_sekolah?>"><?php echo $sekolah->nama?> </option>
                      <?php endforeach?>
@@ -67,9 +67,14 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">jenis kelamin</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Jenis Kelamin</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="jeniskelamin" id="inputPassword" >
+                    <select name="jeniskelamin">
+                    <optgroup class="form-control" label="(empty)" id="jeniskelamin">
+                    <option value="Laki-laki">Laki-laki</option>
+                     <option value="Perempuan">Perempuan</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">

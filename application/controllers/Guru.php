@@ -52,6 +52,7 @@ class Guru extends CI_Controller {
     }
     public function edit($id_guru = null)
     {
+        $data["sekolah"] = $this->Sekolah_model->getAll();
         $guru = $this->Guru_model;
         $data["guru"] = $guru->getById($id_guru);
         $this->load->view("guru/edit", $data);

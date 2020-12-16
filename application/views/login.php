@@ -3,80 +3,114 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+  <title>Dashboard Sistem</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="<?php echo base_url('template/vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="<?php echo base_url('dashboard/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="<?php echo base_url('template/css/sb-admin-2.min.css')?>" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="<?php echo base_url('dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet')?>" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="<?php echo base_url('dashboard/css/coming-soon.min.css')?>" rel="stylesheet">
 
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
-    <div class="container">
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="<?php echo base_url('dashboard/mp4/bg.mp4')?>" type="video/mp4">
+  </video>
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+  <div class="masthead">
+    <div class="masthead-bg"></div>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 my-auto">
+          <div class="masthead-content text-white py-5 py-md-0">
+          <img src="<?php echo base_url('assetsimage/a.png')?>" width="230" />
+            <h2 class="mb-3">Sistem Informasi UPTD</h2>
+            <p class="mb-5">Selamat Datang Di Sistem Informasi UPTD Pendidikan Kecamatan Baturiti, BALI!
+            <div class="input-group input-group-newsletter">
+              <div class="input-group-append">
+                <a href="#" data-toggle="modal" data-target="#mylogin">
+                <button class="btn btn-primary" type="button">UPTD</button>
+                </a>
+                <a href="#" data-toggle="modal" data-target="#mylogin2">
+                <button class="btn btn-success" type="button">SEKOLAH</button>
+                </a>
+              </div>
             </div>
-
+          </div>
         </div>
-
+      </div>
     </div>
+</div>
+<div id="mylogin" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url('template/vendor/jquery/jquery.min.js')?>"></script>
-    <script src="<?php echo base_url('template/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+          <form action="<?php echo base_url('login/loginuptd') ?>"  method="post" enctype="multipart/form-data" >
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success" name="button">login</button>
+        <!-- <input class="btn btn-success" type="submit" name="btn" value="login" data-dismiss="modal" /> -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal Login -->
+  <div id="mylogin2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Login</h4>
+    </div>
+    <div class="modal-body">
+      <form action="<?php echo base_url('pegawai/loginpegawai') ?>"  method="post" enctype="multipart/form-data" >
+        <div class="form-group">
+    <label for="username">NIP</label>
+    <input type="text" class="form-control" id="username" name="NIP" placeholde="Username" required="">
+        </div>
+    <button type="submit" class="btn btn-success" name="button">login</button>
+    <!-- <input class="btn btn-success" type="submit" name="btn" value="login" data-dismiss="modal" /> -->
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="<?php echo base_url('dashboard/vendor/jquery/jquery.min.js')?>"></script>
+  <script src="<?php echo base_url('dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url('template/vendor/jquery-easing/jquery.easing.min.js')?>"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url('template/js/sb-admin-2.min.js')?>"></script>
+  <!-- Custom scripts for this template -->
+  <script src="<?php echo base_url('dashboard/js/coming-soon.min.js')?>"></script>
 
 </body>
 

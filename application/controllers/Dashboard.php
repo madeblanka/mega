@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model("User_model");
 		$this->load->model("Pengumuman_model");
 		$this->load->model("Jumlahsiswa_model");
+		$this->load->helper(array('url','download'));	
     }
 
 	public function dashboard()
@@ -28,8 +29,7 @@ class Dashboard extends CI_Controller {
 		$data["jumlahsiswa5"] = $this->Jumlahsiswa_model->jumlahsiswa5();
 		$this->load->view('dashboard',$data);
 	}
-	public function index()
-	{
-		$this->load->view('login');
-	}
+	public function download($lampiran){				
+		force_download('pengumuman/'.$lampiran, NULL);
+	}	
 }

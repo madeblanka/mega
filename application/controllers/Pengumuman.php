@@ -49,4 +49,5 @@ class Pengumuman extends CI_Controller {
             redirect(site_url('pengumuman/index'));
         }
     }
+   
 }

@@ -49,29 +49,48 @@
                 </div>
             </div>
             <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Jenis</label>
-                    <select class="col-sm-10" class="form-control" name="jenis">
-                      <option value="negeri">Negeri</option>
-                      <option value="swasta">Swasta</option>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Jenis</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="jenis">
+                    <optgroup name="jenis">
+                      <option value="Negeri">Negeri</option>
+                      <option value="Swasta">Swasta</option>
+                    </optgroup>
                     </select>
             </div>
+            </div>
+
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">rayon</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" name="rayon" id="inputPassword" >
                 </div>
             </div>
+
             <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Jenjang</label>
-                    <select class="col-sm-10" class="form-control" name="jenjang">
-                      <option value="tk">TK</option>
-                      <option value="sd">SD</option>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Jenjang</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="jenjang">
+                    <optgroup name="jenjang">
+                      <option value="TK">TK</option>
+                      <option value="SD">SD</option>
+                      </optgroup>
                     </select>
             </div>
+            </div>
+
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">akreditasi</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">Jenis</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="akreditasi" id="inputPassword" >
+                    <select  class="form-control" name="Jenis">
+                    <optgroup name="jenis">
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">

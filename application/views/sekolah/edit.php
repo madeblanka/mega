@@ -9,7 +9,7 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Id Sekolah</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="id_sekolah" id="inputPassword" disabled value="<?php echo $sekolah->id_sekolah?>">
+                <input type="text" class="form-control" name="id_sekolah" id="inputPassword" hidden value="<?php echo $sekolah->id_sekolah?>">
                 </div>
             </div>
             <div class="form-group row">
@@ -49,10 +49,16 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">jenis</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">jenis</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="jenis" id="inputPassword" value="<?php echo $sekolah->jenis?>">
-                </div>
+                    <select class="form-control" name="jenis">
+                    <optgroup name="jenjang">
+                    <option value="<?php echo $sekolah->jenis?>"><?php echo $sekolah->jenis?></option>
+                    <option value="Negeri">Negeri</option>
+                      <option value="Swasta">Swasta</option>
+                      </optgroup>
+                    </select>
+            </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">rayon</label>
@@ -61,15 +67,30 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">jenjang</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">jenjang</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="jenjang" id="inputPassword" value="<?php echo $sekolah->jenjang?>">
-                </div>
+                    <select class="form-control" name="jenjang">
+                    <optgroup name="jenjang">
+                    <option value="<?php echo $sekolah->jenjang?>"><?php echo $sekolah->jenjang?></option>
+                      <option value="TK">TK</option>
+                      <option value="SD">SD</option>
+                      </optgroup>
+                    </select>
+            </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">akreditasi</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">akreditasi</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="akreditasi" id="inputPassword" value="<?php echo $sekolah->akreditasi?>">
+                    <select  class="form-control" name="akreditasi">
+                    <optgroup name="jenis">
+                    <option value="<?php echo $sekolah->akreditasi?>"><?php echo $sekolah->akreditasi?></option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">

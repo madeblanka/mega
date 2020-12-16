@@ -6,6 +6,7 @@ class Inventaris extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("Inventaris_model");
+        $this->load->model("Sekolah_model");
     }
 	private $_table = "tb_inventaris";
 	
@@ -29,10 +30,12 @@ class Inventaris extends CI_Controller {
     }
     public function tambah()
     {
-        $this->load->view('inventaris/tambah');
+        $data["sekolah"] = $this->Sekolah_model->getAll();
+        $this->load->view('inventaris/tambah',$data);
     }
     public function edit($id_inventaris = null)
     {
+        $data["sekolah"] = $this->Sekolah_model->getAll();
         $inventaris = $this->Inventaris_model;
         $data["inventaris"] = $inventaris->getById($id_inventaris);
         $this->load->view("inventaris/edit", $data);

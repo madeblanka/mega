@@ -8,8 +8,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('dashboard/dashboard')?>">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon ">
+                    <img src="<?php echo base_url('assetsimage/a.png')?>" width="50px">
                 </div>
                 <div class="sidebar-brand-text mx-3">Selamat Datang!<sup></sup></div>
             </a>
@@ -69,15 +69,22 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">List :</h6>
+                        <?php if($this->session->userdata('role') =="kadis"): ?>
+                        <a class="collapse-item" href="<?php echo site_url('sekolah/tk')?>">Tabel TK</a>
+                        <a class="collapse-item" href="<?php echo site_url('sekolah/sd')?>">Tabel SD</a>
+                        <a class="collapse-item" href="<?php echo site_url('sekolah/index')?>">Tabel Seluruh Sekolah</a>
+                        <?php endif ?>
+                        <?php if($this->session->userdata('role') !="kadis"): ?>
                         <a class="collapse-item" href="<?php echo site_url('guru/index')?>">Tabel Guru</a>
                         <a class="collapse-item" href="<?php echo site_url('inventaris/index')?>">Tabel Inventaris</a>
                         <a class="collapse-item" href="<?php echo site_url('sekolah/index')?>">Tabel Sekolah</a>
                         <a class="collapse-item" href="<?php echo site_url('siswa/index')?>">Tabel Siswa</a>
                         <a class="collapse-item" href="<?php echo site_url('staff/index')?>">Tabel Staff</a>
-                        <a class="collapse-item" href="<?php echo site_url('user/index')?>">Tabel User</a>
-                        <a class="collapse-item" href="<?php echo site_url('mapel/index')?>">Tabel Mapel</a>
                         <a class="collapse-item" href="<?php echo site_url('jumlahsiswa/index')?>">Tabel Jumlah Siswa</a>
+                        <a class="collapse-item" href="<?php echo site_url('mapel/index')?>">Tabel Mapel</a>
+                        <a class="collapse-item" href="<?php echo site_url('user/index')?>">Tabel User</a>
                         <a class="collapse-item" href="<?php echo site_url('pengumuman/index')?>">Tabel Pengumuman</a>
+                        <?php endif ?>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -85,7 +92,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?php echo site_url('login/logout')?>">
                     <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
