@@ -29,15 +29,25 @@ class Sekolah extends CI_Controller {
         $data["sekolah"] = $this->Sekolah_model->getAll();
         $this->load->view("sekolah/dashboard", $data);
     }
+    public function print()
+    {
+        $data["sekolah"] = $this->Sekolah_model->getAll();
+        $this->load->view("sekolah/print", $data);
+    }
 	public function tk()
     {
         $data["sekolah"] = $this->Sekolah_model->getBytk();
+        $this->load->view("sekolah/dashboard", $data);
+    }
+    public function jenis()
+    {
+        $data["sekolah"] = $this->Sekolah_model->idsekolah($this->session->userdata('id_sekolah'));
         $this->load->view("sekolah/jenis", $data);
     }
     public function sd()
     {
         $data["sekolah"] = $this->Sekolah_model->getBysd();
-        $this->load->view("sekolah/jenis", $data);
+        $this->load->view("sekolah/dashboard", $data);
     }
     public function add()
     {

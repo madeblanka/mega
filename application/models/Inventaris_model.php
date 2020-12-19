@@ -16,7 +16,12 @@ class Inventaris_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+   
+    public function idinventaris($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_inventaris')->result();
+    }
     public function getById($id_inventaris)
     {
         return $this->db->get_where($this->_table, ["id_inventaris" => $id_inventaris])->result();

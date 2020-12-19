@@ -33,21 +33,11 @@
                           <td><?php echo $staff->alamat?></td>
                           <td><?php echo $staff->jabatan?></td>
                           <td><?php echo $staff->status?></td>
-                          <td><?php echo $staff->jeniskelamin?></td>    
-
-                          <td>
-                          <?php if($this->session->userdata('role') =="kadis"): ?>  
-                          <a href="<?php echo site_url('staff/print/') ?>"
-                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a>    
-                          
-                           <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>  
-
-                          <a href="<?php echo site_url('staff/edit/'.$staff->id_staff) ?>"
+                          <td><?php echo $staff->jeniskelamin?></td>                            
+                          <td><a href="<?php echo site_url('staff/edit/'.$staff->id_staff) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
-
                            <a href="<?php echo site_url('staff/delete/'.$staff->id_staff) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-                           <?php endif ?>
                           </td>
                       </tr>
                 <?php endforeach?>

@@ -80,9 +80,9 @@
             </div>
 
             <div class="form-group row">
-            <label for="inputPassword"  class="col-sm-2 col-form-label">Jenis</label>
+            <label for="inputPassword"  class="col-sm-2 col-form-label">akreditasi</label>
                 <div class="col-sm-10">
-                    <select  class="form-control" name="Jenis">
+                    <select  class="form-control" name="akreditasi">
                     <optgroup name="jenis">
                       <option value="A">A</option>
                       <option value="B">B</option>

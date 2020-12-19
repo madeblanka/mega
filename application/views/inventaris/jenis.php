@@ -2,8 +2,8 @@
 <?php $this->load->view("_partials/sidebar.php") ?>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data mapel</h6>
-            <a href="<?php echo site_url('mapel/tambah/') ?>"
+            <h6 class="m-0 font-weight-bold text-primary">Data Inventaris</h6>
+            <a href="<?php echo site_url('inventaris/tambah/') ?>"
                 href="#!"  class="btn btn-outline-success"><strong>Tambah</strong></a>
         </div>
             <div class="card-body">
@@ -11,31 +11,31 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                               <th>id mapel</th>
+                               <th>id inventaris</th>
                                <th>id sekolah</th>
-                               <th>id guru</th>
-                               <th>mata pelajaran</th>
+                               <th>nama</th>
+                               <th>status</th>
+                               <th>jumlah</th>
+                               <th>sumber</th>
+                               <th>tahun</th>
                                <th>Actoin</th>
                                
                             </tr>
                         </thead>
-                        <?php foreach ($mapel as $mapel): ?>
+                        <?php foreach ($inventaris as $inventaris): ?>
                   <tbody>
                       <tr>
-                          <td><?php echo $mapel->id_mapel?></td>
-                          <td><?php echo $mapel->id_sekolah?></td>
-                          <td><?php echo $mapel->id_guru?></td>
-                          <td><?php echo $mapel->matapelajaran?></td>                           
-                          <td>
-                          <?php if($this->session->userdata('role') =="kadis"): ?>  
-                          <a href="<?php echo site_url('siswa/print/') ?>"
-                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a>    
-                          <a href="<?php echo site_url('mapel/edit/'.$mapel->id_mapel) ?>"
-                           <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>  
+                          <td><?php echo $inventaris->id_inventaris?></td>
+                          <td><?php echo $inventaris->id_sekolah?></td>
+                          <td><?php echo $inventaris->nama?></td>
+                          <td><?php echo $inventaris->status?></td>
+                          <td><?php echo $inventaris->jumlah?></td> 
+                          <td><?php echo $inventaris->sumber?></td>
+                          <td><?php echo $inventaris->tahun?></td>                            
+                          <td><a href="<?php echo site_url('inventaris/edit/'.$inventaris->id_inventaris) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
-                           <a href="<?php echo site_url('mapel/delete/'.$mapel->id_mapel) ?>"
+                           <a href="<?php echo site_url('inventaris/delete/'.$inventaris->id_inventaris) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-                           <?php endif ?>
                           </td>
                       </tr>
                 <?php endforeach?>

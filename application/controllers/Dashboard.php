@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller {
 		$this->load->model("User_model");
 		$this->load->model("Pengumuman_model");
 		$this->load->model("Jumlahsiswa_model");
+		$this->load->model("Siswa_model");
 		$this->load->helper(array('url','download'));	
     }
 
@@ -29,6 +30,23 @@ class Dashboard extends CI_Controller {
 		$data["jumlahsiswa5"] = $this->Jumlahsiswa_model->jumlahsiswa5();
 		$this->load->view('dashboard',$data);
 	}
+	public function dashboardsekolah()
+	{
+		$a = $this->session->userdata('role');
+		$data["guru"] = $this->Guru_model->totalguru();
+		$data["sekolah"] = $this->Sekolah_model->s($a);
+		$data["staff"] = $this->Staff_model->totalstaff();
+		$data["totaluser"] = $this->User_model->totaluser();
+		$data["user"] = $this->User_model->getAll();
+		$data["pengumuman"] = $this->Pengumuman_model->terbaru();
+		$data["jumlahsiswa1"] = $this->Jumlahsiswa_model->jumlahsiswa1();
+		$data["jumlahsiswa2"] = $this->Jumlahsiswa_model->jumlahsiswa2();
+		$data["jumlahsiswa3"] = $this->Jumlahsiswa_model->jumlahsiswa3();
+		$data["jumlahsiswa4"] = $this->Jumlahsiswa_model->jumlahsiswa4();
+		$data["jumlahsiswa5"] = $this->Jumlahsiswa_model->jumlahsiswa5();
+		$this->load->view('dashboardsekolah',$data);
+	}
+	
 	public function download($lampiran){				
 		force_download('pengumuman/'.$lampiran, NULL);
 	}	

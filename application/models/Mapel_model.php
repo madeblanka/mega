@@ -4,7 +4,8 @@ class Mapel_model extends CI_Model
 {
     private $_table = "tb_mapel";
 	
-	public $id_mapel;
+    public $id_mapel;
+    public $id_sekolah;
     public $id_guru;
     public $matapelajaran;
     
@@ -12,7 +13,11 @@ class Mapel_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+    public function idmapel($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_mapel')->result();
+    }
     public function getById($id_mapel)
     {
         return $this->db->get_where($this->_table, ["id_mapel" => $id_mapel])->row();
@@ -22,6 +27,7 @@ class Mapel_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id_mapel = $post["id_mapel"];
+        $this->id_sekolah = $post["id_sekolah"];
         $this->id_guru = $post["id_guru"];
         $this->matapelajaran = $post["matapelajaran"];
         return $this->db->insert($this->_table, $this);
@@ -31,6 +37,7 @@ class Mapel_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id_mapel = $post["id_mapel"];
+        $this->id_sekolah = $post["id_sekolah"];
         $this->id_guru = $post["id_guru"];
         $this->matapelajaran = $post["matapelajaran"];
         return $this->db->update($this->_table, $this, array('id_mapel' => $post['id_mapel']));

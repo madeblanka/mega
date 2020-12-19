@@ -16,8 +16,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               Total Guru</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $this->Guru_model->totalguru(); ?></div>
+                                               Total TK</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $this->Sekolah_model->totaltk(); ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
@@ -51,11 +51,11 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Staff
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total SD
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $this->Staff_model->totalstaff(); ?></div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $this->Sekolah_model->totalsd(); ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,8 +74,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Total User</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $this->User_model->totaluser(); ?></div>
+                                                Total Siswa</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $this->Siswa_model->totalsiswa(); ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user fa-2x text-gray-300"></i>

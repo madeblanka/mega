@@ -91,10 +91,10 @@
       <h4 class="modal-title">Login</h4>
     </div>
     <div class="modal-body">
-      <form action="<?php echo base_url('pegawai/loginpegawai') ?>"  method="post" enctype="multipart/form-data" >
+      <form action="<?php echo base_url('login/loginsekolah') ?>"  method="post" enctype="multipart/form-data" >
         <div class="form-group">
-    <label for="username">NIP</label>
-    <input type="text" class="form-control" id="username" name="NIP" placeholde="Username" required="">
+    <label for="username">ID Sekolah</label>
+    <input type="text" class="form-control" id="username" name="id_sekolah" placeholde="ID SEKOLAH" required="">
         </div>
     <button type="submit" class="btn btn-success" name="button">login</button>
     <!-- <input class="btn btn-success" type="submit" name="btn" value="login" data-dismiss="modal" /> -->

@@ -19,7 +19,16 @@ class Mapel extends CI_Controller {
         $data["mapel"] = $this->Mapel_model->getAll();
         $this->load->view("mapel/dashboard", $data);
     }
-
+    public function print()
+    {
+        $data["mapel"] = $this->Mapel_model->getAll();
+        $this->load->view("mapel/print", $data);
+    }
+    public function jenis()
+    {
+        $data["mapel"] = $this->Mapel_model->idmapel($this->session->userdata('id_sekolah'));
+        $this->load->view("mapel/jenis", $data);
+    }
     public function add()
     {
         $mapel = $this->Mapel_model;
@@ -28,6 +37,8 @@ class Mapel extends CI_Controller {
     }
     public function tambah()
     {
+        
+        $data["sekolah"] = $this->Sekolah_model->getAll();
         $data["guru"] = $this->Guru_model->getAll();
         $this->load->view('mapel/tambah',$data);
     }

@@ -17,7 +17,11 @@ class Staff_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+    public function idstaff($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_staff')->result();
+    }
     public function getById($id_staff)
     {
         return $this->db->get_where($this->_table, ["id_staff" => $id_staff])->row();

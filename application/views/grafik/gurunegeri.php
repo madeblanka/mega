@@ -7,7 +7,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik guru Pria</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Grafik guru Negeri</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -45,7 +45,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tabel Guru Negeri</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -57,7 +57,6 @@
                                     <th>nip</th>
                                     <th>nama</th>
                                     <th>jenis</th>
-                                    <th>action</th>
                                     </tr>
                                     </thead>
                                     <?php foreach ($guru as $guru): ?>
@@ -66,14 +65,6 @@
                                             <td><?php echo $guru->nip?></td>
                                             <td><?php echo $guru->nama?></td>
                                             <td><?php echo $guru->jenis?></td>  
-                                            <td>                        
-                                            <a href="<?php echo site_url('guru/edit/'.$guru->id_guru) ?>"
-                                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
-
-                                            <a href="<?php echo site_url('guru/delete/'.$guru->id_guru) ?>"
-                                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-
-                                            </td>
                                         </tr>
                                         <?php endforeach?>
                                             </tbody>

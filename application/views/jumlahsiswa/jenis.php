@@ -29,18 +29,10 @@
                           <td><?php echo $jumlahsiswa->jumlah_siswa?></td>
                           <td><?php echo $jumlahsiswa->jumlah_siswa_masuk?></td>    
                           <td><?php echo $jumlahsiswa->jumlah_siswa_keluar?></td>                         
-                          <td>
-                          <?php if($this->session->userdata('role') =="kadis"): ?>  
-                            
-                            <a href="<?php echo site_url('jumlahsiswa/print/') ?>"
-                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a>                    
-                        
-                           <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>  
-                          <a href="<?php echo site_url('jumlahsiswa/edit/'.$jumlahsiswa->id_jumlahsiswa) ?>"
+                          <td><a href="<?php echo site_url('jumlahsiswa/edit/'.$jumlahsiswa->id_jumlahsiswa) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
                            <a href="<?php echo site_url('jumlahsiswa/delete/'.$jumlahsiswa->id_jumlahsiswa) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-                            <?php endif ?>
                           </td>
                       </tr>
                 <?php endforeach?>

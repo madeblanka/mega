@@ -15,7 +15,11 @@ class Jumlahsiswa_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+    public function idjumlahsiswa($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_jumlahsiswa')->result();
+    }
     public function getById($id_jumlahsiswa)
     {
         return $this->db->get_where($this->_table, ["id_jumlahsiswa" => $id_jumlahsiswa])->row();

@@ -6,6 +6,7 @@ class Siswa extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("Siswa_model");
+        $this->load->model("Sekolah_model");
     }
 	private $_table = "tb_siswa";
 	
@@ -30,7 +31,16 @@ class Siswa extends CI_Controller {
         $data["siswa"] = $this->Siswa_model->getAll();
         $this->load->view("siswa/dashboard", $data);
     }
-
+    public function print()
+    {
+        $data["sekolah"] = $this->Sekolah_model->getAll();
+        $this->load->view("sekolah/print", $data);
+    }
+    public function jenis()
+    {
+        $data["siswa"] = $this->Siswa_model->nis($this->session->userdata('id_sekolah'));
+        $this->load->view("siswa/jenis", $data);
+    }
     public function grafikpria()
     {
         $data["siswa"] = $this->Siswa_model->getAll();
@@ -39,7 +49,7 @@ class Siswa extends CI_Controller {
     public function grafikbanding()
     {
         $data["siswa"] = $this->Siswa_model->getAll();
-        $this->load->view("grafik/siswapria",$data);
+        $this->load->view("grafik/perbandingan",$data);
     }
     public function grafikperempuan()
     {
@@ -54,7 +64,8 @@ class Siswa extends CI_Controller {
     }
     public function tambah()
     {
-        $this->load->view('siswa/tambah');
+        $data["sekolah"] = $this->Sekolah_model->getAll();
+        $this->load->view('siswa/tambah',$data);
     }
     public function edit($nis = null)
     {

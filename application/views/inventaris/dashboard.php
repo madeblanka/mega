@@ -32,10 +32,17 @@
                           <td><?php echo $inventaris->jumlah?></td> 
                           <td><?php echo $inventaris->sumber?></td>
                           <td><?php echo $inventaris->tahun?></td>                            
-                          <td><a href="<?php echo site_url('inventaris/edit/'.$inventaris->id_inventaris) ?>"
+                          <td>
+                          <?php if($this->session->userdata('role') =="kadis"): ?>  
+                            
+                            <a href="<?php echo site_url('jumlahsiswa/print/') ?>"
+                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a>                    
+                        
+                           <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>  <a href="<?php echo site_url('inventaris/edit/'.$inventaris->id_inventaris) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
                            <a href="<?php echo site_url('inventaris/delete/'.$inventaris->id_inventaris) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                           <?php endif ?>
                           </td>
                       </tr>
                 <?php endforeach?>

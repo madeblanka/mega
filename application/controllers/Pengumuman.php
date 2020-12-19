@@ -27,6 +27,11 @@ class Pengumuman extends CI_Controller {
             $pengumuman->save();
             redirect(site_url('pengumuman/index'));
     }
+    public function print()
+    {
+        $data["pengumuman"] = $this->Pengumuman_model->getAll();
+        $this->load->view("pengumuman/print", $data);
+    }
     public function tambah()
     {
         $this->load->view('pengumuman/tambah');

@@ -18,18 +18,35 @@ class Sekolah_model extends CI_Model
     public $longtitude;
     public $latitude;
 
-    
+    public function loginsekolah($where){
+        $this->db->where($where);
+      return $this->db->get('tb_sekolah')->num_rows();
+    }
+
+    public function hasil($id_sekolah){
+      $this->db->where('id_sekolah',$id_sekolah);
+        return $this->db->get('tb_sekolah')->result();
+    }
+    public function idsekolah($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_sekolah')->result();
+    }
     public function getAll()
     {
         return $this->db->get($this->_table)->result();
     }
     public function getBysd()
     {
-        return $this->db->get_where($this->_table, ["jenjang" => 'SD'])->row();
+        return $this->db->get_where($this->_table, ["jenjang" => 'SD'])->result();
+    }
+    public function s($a)
+    {
+        return $this->db->get_where($this->_table, ["id_sekolah" => $a])->row();
     }
     public function getBytk()
     {
-        return $this->db->get_where($this->_table, ["jenjang" => 'TK'])->row();
+        return $this->db->get_where($this->_table, ["jenjang" => 'TK'])->result();
     }
     public function getById($id_sekolah)
     {
@@ -50,6 +67,18 @@ class Sekolah_model extends CI_Model
     public function totalsekolah()
     {
         return $this->db->count_all('tb_sekolah');   
+    }
+    public function totaltk()
+    {
+        $this->db->where('jenjang','tk');
+        $this->db->from("tb_sekolah");
+        return $this->db->count_all_results();
+    }
+    public function totalsd()
+    {
+        $this->db->where('jenjang','sd');
+        $this->db->from("tb_sekolah");
+        return $this->db->count_all_results();
     }
     public function save()
     {

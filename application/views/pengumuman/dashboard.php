@@ -26,10 +26,16 @@
                           <td><?php echo $pengumuman->judul?></td>
                           <td><?php echo $pengumuman->deskripsi?></td>
                           <td><?php echo $pengumuman->lampiran?></td>                    
-                          <td><a href="<?php echo site_url('pengumuman/edit/'.$pengumuman->id_pengumuman) ?>"
+                          <td>
+                          <?php if($this->session->userdata('role') =="kadis"): ?>  
+                          <a href="<?php echo site_url('pengumuman/print/') ?>"
+                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a>  
+                           <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>    
+                          <a href="<?php echo site_url('pengumuman/edit/'.$pengumuman->id_pengumuman) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
                            <a href="<?php echo site_url('pengumuman/delete/'.$pengumuman->id_pengumuman) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                           <?php endif ?>
                           </td>
                       </tr>
                 <?php endforeach?>

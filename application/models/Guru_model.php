@@ -21,7 +21,11 @@ class Guru_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+    public function idguru($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_guru')->result();
+    }
     public function getById($id_guru)
     {
         return $this->db->get_where($this->_table, ["id_guru" => $id_guru])->result();
@@ -38,7 +42,7 @@ class Guru_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_guru = $post["id_guru"];
+        $this->id_guru = " ";
         $this->id_sekolah = $post["id_sekolah"];
         $this->nip = $post["nip"];
         $this->nama = $post["nama"];

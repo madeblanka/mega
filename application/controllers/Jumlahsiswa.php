@@ -23,7 +23,16 @@ class Jumlahsiswa extends CI_Controller {
         $data["jumlahsiswa"] = $this->Jumlahsiswa_model->getAll();
         $this->load->view("jumlahsiswa/dashboard", $data);
     }
-
+    public function print()
+    {
+        $data["jumlahsiswa"] = $this->Jumlahsiswa_model->getAll();
+        $this->load->view("jumlahsiswa/print", $data);
+    }
+    public function jenis()
+    {
+        $data["jumlahsiswa"] = $this->Jumlahsiswa_model->idjumlahsiswa($this->session->userdata('id_sekolah'));
+        $this->load->view("jumlahsiswa/jenis", $data);
+    }
     public function add()
     {
         $jumlahsiswa = $this->Jumlahsiswa_model;

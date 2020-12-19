@@ -5,6 +5,7 @@ class Siswa_model extends CI_Model
     private $_table = "tb_siswa";
 	
     public $nis;
+    public $id_sekolah;
     public $nama;
     public $alamat;
 	public $telp;
@@ -23,7 +24,15 @@ class Siswa_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+    public function totalsiswa()
+    {
+        return $this->db->count_all('tb_siswa');   
+    }
+    public function nis($id_sekolah)
+    {
+      $this->db->where('id_sekolah',$id_sekolah);
+      return $this->db->get('tb_siswa')->result();
+    }
     public function getById($nis)
     {
         return $this->db->get_where($this->_table, ["nis" => $nis])->row();
@@ -45,6 +54,7 @@ class Siswa_model extends CI_Model
     {
         $post = $this->input->post();
         $this->nis = $post["nis"];
+        $this->id_sekolah = $post["id_sekolah"];
         $this->nama = $post["nama"];
         $this->alamat = $post["alamat"];
         $this->telp = $post["telp"];
@@ -66,6 +76,7 @@ class Siswa_model extends CI_Model
     {
         $post = $this->input->post();
         $this->nis = $post["nis"];
+        $this->id_sekolah = $post["id_sekolah"];
         $this->nama = $post["nama"];
         $this->alamat = $post["alamat"];
         $this->telp = $post["telp"];

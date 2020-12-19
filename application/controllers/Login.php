@@ -6,6 +6,11 @@ class Login extends CI_Controller {
         parent::__construct();
         $this->load->model('User_model');
         $this->load->model('Sekolah_model');
+        $this->load->model("Guru_model");
+		$this->load->model("Staff_model");
+		$this->load->model("Pengumuman_model");
+		$this->load->model("Jumlahsiswa_model");
+		$this->load->model("Siswa_model");
 	}
     private $_table = "tb_user";
 
@@ -23,36 +28,44 @@ class Login extends CI_Controller {
         if($this->input->post()){
             if($this->User_model->doLogin())
             {
-                $this->session->set_flashdata('msg','NIP tidak ditemukan !!!');
-                echo "<script>
-                alert('Selamat Datang !'); </script>";
-                redirect('dashboard/dashboard');
+               redirect('dashboard/dashboard');
         }else{
-            $this->session->set_flashdata('msg','NIP tidak ditemukan !!!');
-            redirect('pegawai');
-        }
-        $this->load->view("login");
+            echo "<script>
+                alert('Username atau Password yang anda masukan Salah!');
+                window.location.href='index';
+                </script>";
+            }
     }
     }
     public function loginsekolah()
     {
-     // jika form login disubmit
-     if($this->input->post()){
-        if($this->User_model->doLogin())
-        {
-                echo "<script>
-                        alert('Selamat Datang !');
-                        window.location.href='../dashboard/dashboard';
-                        </script>";
-    }else{
-        echo "<script>
-                alert('Username atau Password yang anda masukan Salah!');
-                window.location.href='dashboard/index';
-                </script>";
+        $id_sekolah = $this->input->post('id_sekolah');
+        $where = array(
+          'id_sekolah' => $id_sekolah
+          );
+    
+        $cek = $this->Sekolah_model->getById($id_sekolah);
+        // var_dump($cek); exit();
+        if($cek != null){
+    
+          $data_session = array(
+            'id_sekolah' => $id_sekolah,
+            'status' => 'login',
+            'role'=>$cek->jenjang
+            );
+    
+        $this->session->set_userdata($data_session);
+
+         $data['sekolah'] = $this->Sekolah_model->hasil($id_sekolah);
+         $this->load->view("sekolah/dashboard", $data);
+        }else{
+          
+          $this->session->set_flashdata('msg','ID Sekolah tidak ditemukan !!!');
+          redirect('login');
+        }
     }
-        $this->load->view("login");
-    }
-    }
+
+    
     public function logout()
     {
         $this->session->sess_destroy();

@@ -27,8 +27,8 @@
                                <th>action</th>
                             </tr>
                         </thead>
-                        <?php foreach ($sekolah as $sekolah): ?>
                   <tbody>
+                  <?php foreach ($sekolah as $sekolah): ?>
                       <tr>
                           <td><?php echo $sekolah->id_sekolah?></td>
                           <td><?php echo $sekolah->nama?></td>
@@ -42,13 +42,18 @@
                           <td><?php echo $sekolah->jenjang?></td>
                           <td><?php echo $sekolah->akreditasi?></td>
                           <td><?php echo $sekolah->longtitude?></td>       
-                          <td><?php echo $sekolah->latitude?></td>                             
-                          <td><a href="<?php echo site_url('sekolah/edit/'.$sekolah->id_sekolah) ?>"
+                          <td><?php echo $sekolah->latitude?></td>      
+                                                 
+                          <td> <?php if($this->session->userdata('role') =="kadis"): ?>  
+                          <a href="<?php echo site_url('sekolah/print/') ?>"
+                           href="#!" class="btn btn-small text-success"><i class="fas fa-print"></i> Print</a>
+                          <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>  
+                           <a href="<?php echo site_url('sekolah/edit/'.$sekolah->id_sekolah) ?>"
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
 
                            <a href="<?php echo site_url('sekolah/delete/'.$sekolah->id_sekolah) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-
+                           <?php endif ?>
                           </td>
                       </tr>
                 <?php endforeach?>

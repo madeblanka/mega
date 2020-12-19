@@ -3,8 +3,10 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Data Sekolah</h6>
+        <?php if($this->session->userdata('role') !="kadis"): ?>
             <a href="<?php echo site_url('sekolah/tambah/') ?>"
                 href="#!"  class="btn btn-outline-success"><strong>Tambah</strong></a>
+                <?php endif ?>
         </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -28,6 +30,7 @@
                             </tr>
                         </thead>
                   <tbody>
+                  <?php foreach ($sekolah as $sekolah): ?>
                       <tr>
                           <td><?php echo $sekolah->id_sekolah?></td>
                           <td><?php echo $sekolah->nama?></td>
@@ -49,8 +52,9 @@
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 
                           </td>
-                      </tr>
+                      </tr><?php endforeach?>
                         </tbody>
+                        
                     </table>
                 </div>
             </div>

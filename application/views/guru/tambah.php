@@ -15,7 +15,7 @@
             <div class="form-group row">
             <label for="inputPassword"  class="col-sm-2 col-form-label">Id Sekolah</label>
                 <div class="col-sm-10">
-                    <select  class="form-control" name="idkategori">
+                    <select  class="form-control" name="id_sekolah">
                     <optgroup label="(empty)" id="inputPassword">
                      <?php foreach ($sekolah as $sekolah):?>
                      <option value="<?php echo $sekolah->id_sekolah?>"><?php echo $sekolah->nama?> </option>

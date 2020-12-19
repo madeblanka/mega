@@ -24,23 +24,31 @@ class Staff extends CI_Controller {
         $data["staff"] = $this->Staff_model->getAll();
         $this->load->view("staff/dashboard", $data);
     }
-
+    public function print()
+    {
+        $data["staff"] = $this->Staff_model->getAll();
+        $this->load->view("staff/print", $data);
+    }
     public function add()
     {
         $staff = $this->Staff_model;
             $staff->save();
             redirect(site_url('staff/index'));
     }
+    public function jenis()
+    {
+        $data["staff"] = $this->Staff_model->idstaff($this->session->userdata('id_sekolah'));
+        $this->load->view("staff/jenis", $data);
+    }
     public function tambah()
     {
-       
+        $data["sekolah"] = $this->Sekolah_model->getAll();
         $this->load->view('staff/tambah',$data);
     }
     public function edit($id_staff = null)
     {
         $data["sekolah"] = $this->Sekolah_model->getAll();
-        $staff = $this->Staff_model;
-        $data["staff"] = $staff->getById($id_staff);
+        $data["staff"] = $this->Staff_model->getById($id_staff);
         $this->load->view("staff/edit", $data);
 	}
 	public function update(){

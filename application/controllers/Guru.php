@@ -28,15 +28,25 @@ class Guru extends CI_Controller {
         $data["guru"] = $this->Guru_model->getAll();
         $this->load->view("guru/dashboard", $data);
     }
+    public function print()
+    {
+        $data["guru"] = $this->Guru_model->getAll();
+        $this->load->view("guru/print", $data);
+    }
+    public function jenis()
+    {
+        $data["guru"] = $this->Guru_model->idguru($this->session->userdata('id_sekolah'));
+        $this->load->view("guru/jenis", $data);
+    }
     public function grafikswasta()
     {
         $data["guru"] = $this->Guru_model->getAll();
-        $this->load->view("grafik/gurunegeri",$data);
+        $this->load->view("grafik/guruswasta",$data);
     }
     public function grafiknegeri()
     {
         $data["guru"] = $this->Guru_model->getAll();
-        $this->load->view("grafik/guruswasta",$data);
+        $this->load->view("grafik/gurunegeri",$data);
     }
     
 	public function add()

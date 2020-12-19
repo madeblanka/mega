@@ -45,7 +45,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tabel Siswa Pria</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -57,7 +57,6 @@
                                     <th>nis</th>
                                     <th>nama</th>
                                     <th>jeniskelamin</th>
-                                    <th>action</th>
                                     </tr>
                                     </thead>
                                     <?php foreach ($siswa as $siswa): ?>
@@ -66,14 +65,6 @@
                                             <td><?php echo $siswa->nis?></td>
                                             <td><?php echo $siswa->nama?></td>
                                             <td><?php echo $siswa->jeniskelamin?></td>  
-                                            <td>                        
-                                            <a href="<?php echo site_url('siswa/edit/'.$siswa->nis) ?>"
-                                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
-
-                                            <a href="<?php echo site_url('siswa/delete/'.$siswa->nis) ?>"
-                                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-
-                                            </td>
                                         </tr>
                                         <?php endforeach?>
                                             </tbody>

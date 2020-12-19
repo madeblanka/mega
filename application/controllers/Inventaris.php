@@ -21,7 +21,16 @@ class Inventaris extends CI_Controller {
         $data["inventaris"] = $this->Inventaris_model->getAll();
         $this->load->view("inventaris/dashboard", $data);
     }
-
+    public function print()
+    {
+        $data["inventaris"] = $this->Inventaris_model->getAll();
+        $this->load->view("inventaris/print", $data);
+    }
+    public function jenis()
+    {
+        $data["inventaris"] = $this->Inventaris_model->idinventaris($this->session->userdata('id_sekolah'));
+        $this->load->view("inventaris/jenis", $data);
+    }
     public function add()
     {
         $inventaris = $this->Inventaris_model;
