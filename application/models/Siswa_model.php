@@ -22,7 +22,12 @@ class Siswa_model extends CI_Model
     
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        if($this->session->userdata['id_sekolah'] != null){
+            $this->db->where('id_sekolah',$this->session->userdata['id_sekolah']);
+            return $this->db->get($this->_table)->result();
+        }else{
+            return $this->db->get($this->_table)->result();
+        }
     }
     public function totalsiswa()
     {
@@ -39,16 +44,33 @@ class Siswa_model extends CI_Model
     }
     public function pria()
     {
-        return $this->db->get_where($this->_table, ["jeniskelamin" => 'pria'])->row();
+        if($this->session->userdata['id_sekolah'] != null){
+            $this->db->where('id_sekolah',$this->session->userdata['id_sekolah']);
+            return $this->db->get_where($this->_table, ["jeniskelamin" => 'pria'])->row();
+        }else{
+            return $this->db->get_where($this->_table, ["jeniskelamin" => 'pria'])->row();
+        }
     }
     public function perempuan()
     {
-        return $this->db->get_where($this->_table, ["jeniskelamin" => 'perempuan'])->row();
+        if($this->session->userdata['id_sekolah'] != null){
+            $this->db->where('id_sekolah',$this->session->userdata['id_sekolah']);
+            return $this->db->get_where($this->_table, ["jeniskelamin" => 'perempuan'])->row();
+        }else{
+            return $this->db->get_where($this->_table, ["jeniskelamin" => 'perempuan'])->row();
+        }
+        
     }
     public function jeniskelamin($where)
     {
-        $this->db->like('jeniskelamin',$where);
-        return $this->db->get('tb_siswa')->num_rows();
+        if($this->session->userdata['id_sekolah'] != null){
+            $this->db->where('id_sekolah',$this->session->userdata['id_sekolah']);
+            $this->db->like('jeniskelamin',$where);
+            return $this->db->get('tb_siswa')->num_rows();;
+        }else{
+            $this->db->like('jeniskelamin',$where);
+            return $this->db->get('tb_siswa')->num_rows();
+        }
     }
     public function save()
     {

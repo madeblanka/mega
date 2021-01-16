@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class Guru_model extends CI_Model
 {
@@ -7,24 +7,29 @@ class Guru_model extends CI_Model
     public $id_guru;
     public $id_sekolah;
     public $nip;
-	public $nama;
-	public $email;
+    public $nama;
+    public $email;
     public $telp;
     public $jabatan;
-	public $lulusan;
-	public $jenis;
+    public $lulusan;
+    public $jenis;
     public $jeniskelamin;
     public $tempat_lahir;
     public $tanggal_lahir;
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        if ($this->session->userdata['id_sekolah'] != null) {
+            $this->db->where('id_sekolah', $this->session->userdata['id_sekolah']);
+            return $this->db->get($this->_table)->result();
+        } else {
+            return $this->db->get($this->_table)->result();
+        }
     }
     public function idguru($id_sekolah)
     {
-      $this->db->where('id_sekolah',$id_sekolah);
-      return $this->db->get('tb_guru')->result();
+        $this->db->where('id_sekolah', $id_sekolah);
+        return $this->db->get('tb_guru')->result();
     }
     public function getById($id_guru)
     {
@@ -32,12 +37,18 @@ class Guru_model extends CI_Model
     }
     public function totalguru()
     {
-        return $this->db->count_all('tb_guru');   
+        return $this->db->count_all('tb_guru');
     }
     public function jenis($where)
     {
-        $this->db->like('jenis',$where);
-        return $this->db->get('tb_guru')->num_rows();
+        if ($this->session->userdata['id_sekolah'] != null) {
+            $this->db->where('id_sekolah', $this->session->userdata['id_sekolah']);
+            $this->db->like('jenis', $where);
+            return $this->db->get('tb_guru')->num_rows();
+        } else {
+            $this->db->like('jenis', $where);
+            return $this->db->get('tb_guru')->num_rows();
+        }
     }
     public function save()
     {

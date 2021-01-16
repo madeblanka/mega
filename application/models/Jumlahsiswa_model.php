@@ -13,7 +13,12 @@ class Jumlahsiswa_model extends CI_Model
 	
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        if($this->session->userdata['id_sekolah'] != null){
+            $this->db->where('id_sekolah',$this->session->userdata['id_sekolah']);
+            return $this->db->get($this->_table)->result();
+        }else{
+            return $this->db->get($this->_table)->result();
+        }
     }
     public function idjumlahsiswa($id_sekolah)
     {

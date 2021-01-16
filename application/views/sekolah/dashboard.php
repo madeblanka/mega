@@ -54,6 +54,8 @@
                            <a href="<?php echo site_url('sekolah/delete/'.$sekolah->id_sekolah) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                            <?php endif ?>
+
+                           <a target="_blank" href="<?php echo 'https://www.google.com/maps/place/'.$sekolah->longtitude.','.$sekolah->latitude; ?>" class="btn btn-small text-primary"><i class="fas fa-map-marked-alt"></i>Maps</a>
                           </td>
                       </tr>
                 <?php endforeach?>
