@@ -92,6 +92,12 @@
                 <input type="datetime" class="form-control" name="tanggal_lahir" id="inputPassword"value="<?php echo $guru->tanggal_lahir?>" >
                 </div>
             </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">alamat</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" name="alamat" id="inputPassword" value="<?php echo $guru->alamat?>">
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary"  onclick="return confirm('Apakah Anda Yakin Ingin Menyimpan Data Ini ?');">Simpan</button>
             <?php endforeach?>
             </form>

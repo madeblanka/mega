@@ -65,10 +65,11 @@ class Login extends CI_Controller
             $data_session = array(
                 'id_sekolah' => $id_sekolah,
                 'status' => 'login',
-                'role' => $cek->jenjang
+                'role' => $cek->jenjang,
             );
 
             $this->session->set_userdata($data_session);
+            $this->session->set_userdata(['display_name' => $cek->nama]);
 
             $data['sekolah'] = $this->Sekolah_model->hasil($id_sekolah);
             $this->load->view("sekolah/dashboard", $data);

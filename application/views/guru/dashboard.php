@@ -23,6 +23,7 @@
                                <th>jenis kelamin</th>
                                <th>tempat lahir</th>
                                <th>tanggal_lahir</th>
+                               <th>alamat</th>
                                <th>Action</th>
                             </tr>
                         </thead>
@@ -41,6 +42,7 @@
                           <td><?php echo $guru->jeniskelamin?></td>
                           <td><?php echo $guru->tempat_lahir?></td>
                           <td><?php echo $guru->tanggal_lahir?></td>
+                          <td><?php echo $guru->alamat?></td>
                           <td> 
                           <?php if($this->session->userdata('role') =="kadis"): ?>  
                             

@@ -7,6 +7,7 @@ class Mapel extends CI_Controller {
         parent::__construct();
         $this->load->model("Mapel_model");
         $this->load->model("Guru_model");
+        $this->load->model("Sekolah_model");
     }
 	private $_table = "tb_mapel";
 	

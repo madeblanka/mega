@@ -99,6 +99,7 @@
                 <div class="col-sm-10">
                     <select class="form-control" name="status_masuk">
                     <optgroup  label="(empty)" id="status_keluar">
+                    <option value="">Siswa Belum Lulus</option>
                     <option value="Siswa Lulus">Siswa Lulus</option>
                      <option value="Siswa Pindahan">Siswa Pindahan</option>
                      <option value="Siswa Menundurkan Diri">Siswa Menundurkan Diri</option>

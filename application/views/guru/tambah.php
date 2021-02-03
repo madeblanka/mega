@@ -63,7 +63,12 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">jenis</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="jenis" id="inputPassword" >
+                    <select name="jenis">
+                    <optgroup class="form-control" label="(empty)" id="jeniskelamin">
+                    <option value="negeri">Negeri</option>
+                     <option value="swasta">Swasta</option>
+				    </optgroup>
+                   </select>
                 </div>
             </div>
             <div class="form-group row">
@@ -87,6 +92,12 @@
                 <label for="inputPassword" class="col-sm-2 col-form-label">tanggal lahir</label>
                 <div class="col-sm-10">
                 <input type="datetime-local" class="form-control" name="tanggal_lahir" id="inputPassword" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">alamat</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" name="alamat" id="inputPassword" >
                 </div>
             </div>
             <button type="submit" class="btn btn-primary"  onclick="return confirm('Apakah Anda Yakin Ingin Menyimpan Data Ini ?');">Simpan</button>

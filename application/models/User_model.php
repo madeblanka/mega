@@ -24,6 +24,7 @@ class User_model extends CI_Model
                 // login sukses yay!
                 $this->session->set_userdata(['user_logged' => $user]);
                 $this->session->set_userdata(['role' => $user->username]);
+                $this->session->set_userdata(['display_name' => $user->username]);
                 return true;
             }
 

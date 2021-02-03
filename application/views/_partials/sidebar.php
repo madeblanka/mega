@@ -20,7 +20,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <div class="nav-link">
-                    <span>Selamat Datang, <?php print_r($this->session->userdata['user_logged']->username); ?></span>
+                    <span>Selamat Datang, <?php print_r($this->session->userdata['display_name']); ?></span>
                 </div>
             </li>
 

@@ -65,6 +65,7 @@ class Guru_model extends CI_Model
         $this->jeniskelamin = $post["jeniskelamin"];
         $this->tempat_lahir = $post["tempat_lahir"];
         $this->tanggal_lahir = $post["tanggal_lahir"];
+        $this->alamat = $post["alamat"];
         return $this->db->insert($this->_table, $this);
     }
 
@@ -83,6 +84,7 @@ class Guru_model extends CI_Model
         $this->jeniskelamin = $post["jeniskelamin"];
         $this->tempat_lahir = $post["tempat_lahir"];
         $this->tanggal_lahir = $post["tanggal_lahir"];
+        $this->alamat = $post["alamat"];
         return $this->db->update($this->_table, $this, array('id_guru' => $post['id_guru']));
     }
 
