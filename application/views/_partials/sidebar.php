@@ -118,7 +118,7 @@
                             <h6 class="collapse-header">List :</h6>
                             <a class="collapse-item" href="<?php echo site_url('guru/jenis') ?>">Tabel Guru</a>
                             <a class="collapse-item" href="<?php echo site_url('inventaris/jenis') ?>">Tabel Inventaris</a>
-                            <a class="collapse-item" href="<?php echo site_url('sekolah/jenis') ?>">Tabel Sekolah</a>
+                            <!-- <a class="collapse-item" href="<?php echo site_url('sekolah/jenis') ?>">Tabel Sekolah</a> -->
                             <a class="collapse-item" href="<?php echo site_url('siswa/jenis') ?>">Tabel Siswa</a>
                             <a class="collapse-item" href="<?php echo site_url('staff/jenis') ?>">Tabel Staff</a>
                             <a class="collapse-item" href="<?php echo site_url('jumlahsiswa/jenis') ?>">Tabel Jumlah Siswa</a>
