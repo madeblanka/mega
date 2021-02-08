@@ -83,7 +83,7 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">tanggal lahir</label>
                 <div class="col-sm-10">
-                <input type="datetime" class="form-control" name="tanggal_lahir" id="inputPassword" >
+                <input type="date" class="form-control" name="tanggal_lahir" id="inputPassword" >
                 </div>
             </div>
             <div class="form-group row">

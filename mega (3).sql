@@ -1,35 +1,23 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jan 21, 2021 at 03:36 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+/*
+SQLyog Ultimate v11.2 (64 bit)
+MySQL - 5.7.24 : Database - mega
+*********************************************************************
+*/
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+/*!40101 SET NAMES utf8 */;
 
+/*!40101 SET SQL_MODE=''*/;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*Table structure for table `tb_guru` */
 
---
--- Database: `mega`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_guru`
---
+DROP TABLE IF EXISTS `tb_guru`;
 
 CREATE TABLE `tb_guru` (
-  `id_guru` int(11) NOT NULL,
+  `id_guru` int(11) NOT NULL AUTO_INCREMENT,
   `id_sekolah` int(11) NOT NULL,
   `nip` varchar(15) NOT NULL,
   `nama` varchar(50) NOT NULL,
@@ -40,111 +28,87 @@ CREATE TABLE `tb_guru` (
   `jenis` varchar(15) NOT NULL,
   `jeniskelamin` varchar(10) NOT NULL,
   `tempat_lahir` varchar(20) NOT NULL,
-  `tanggal_lahir` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `tanggal_lahir` date NOT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_guru`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_guru`
---
+/*Data for the table `tb_guru` */
 
-INSERT INTO `tb_guru` (`id_guru`, `id_sekolah`, `nip`, `nama`, `email`, `telp`, `jabatan`, `lulusan`, `jenis`, `jeniskelamin`, `tempat_lahir`, `tanggal_lahir`) VALUES
-(2, 1231, '2147483647123', 'coba1', 'blankamade@gmail.com1', '1231', 'staff1', 'asdads1', 'swasta', 'asd1', 'Denpasar1', '2020-12-04'),
-(3, 1, '195805151994031', 'coba', 'blankamade@gmail.com', '1', 'staff', 'asdads', 'swasta', 'Laki-laki', 'Denpasar', '2020-12-11');
+insert  into `tb_guru`(`id_guru`,`id_sekolah`,`nip`,`nama`,`email`,`telp`,`jabatan`,`lulusan`,`jenis`,`jeniskelamin`,`tempat_lahir`,`tanggal_lahir`,`alamat`) values (2,1231,'2147483647123','coba1','blankamade@gmail.com1','1231','staff1','asdads1','swasta','asd1','Denpasar1','2020-12-04','jalan raya no 1'),(3,1,'195805151994031','coba','blankamade@gmail.com','1','staff','asdads','swasta','Laki-laki','Denpasar','2020-12-11','jalan raya no 1');
 
--- --------------------------------------------------------
+/*Table structure for table `tb_inventaris` */
 
---
--- Table structure for table `tb_inventaris`
---
+DROP TABLE IF EXISTS `tb_inventaris`;
 
 CREATE TABLE `tb_inventaris` (
-  `id_inventaris` int(11) NOT NULL,
+  `id_inventaris` int(11) NOT NULL AUTO_INCREMENT,
   `id_sekolah` int(11) NOT NULL,
   `nama` varchar(25) NOT NULL,
   `status` varchar(15) NOT NULL,
   `jumlah` int(11) NOT NULL,
   `sumber` varchar(15) NOT NULL,
-  `tahun` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `tahun` date NOT NULL,
+  PRIMARY KEY (`id_inventaris`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_inventaris`
---
+/*Data for the table `tb_inventaris` */
 
-INSERT INTO `tb_inventaris` (`id_inventaris`, `id_sekolah`, `nama`, `status`, `jumlah`, `sumber`, `tahun`) VALUES
-(2, 1, 'coba2', 'Cukup Baik', 2000000, 'Bantuan', '2020-12-04');
+insert  into `tb_inventaris`(`id_inventaris`,`id_sekolah`,`nama`,`status`,`jumlah`,`sumber`,`tahun`) values (2,1,'coba2','Cukup Baik',2000000,'Bantuan','2020-12-04');
 
--- --------------------------------------------------------
+/*Table structure for table `tb_jumlahsiswa` */
 
---
--- Table structure for table `tb_jumlahsiswa`
---
+DROP TABLE IF EXISTS `tb_jumlahsiswa`;
 
 CREATE TABLE `tb_jumlahsiswa` (
-  `id_jumlahsiswa` int(11) NOT NULL,
+  `id_jumlahsiswa` int(11) NOT NULL AUTO_INCREMENT,
   `id_sekolah` int(11) NOT NULL,
   `tahun` year(4) NOT NULL,
   `jumlah_siswa` int(11) NOT NULL,
   `jumlah_siswa_masuk` int(11) NOT NULL,
-  `jumlah_siswa_keluar` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `jumlah_siswa_keluar` int(11) NOT NULL,
+  PRIMARY KEY (`id_jumlahsiswa`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_jumlahsiswa`
---
+/*Data for the table `tb_jumlahsiswa` */
 
-INSERT INTO `tb_jumlahsiswa` (`id_jumlahsiswa`, `id_sekolah`, `tahun`, `jumlah_siswa`, `jumlah_siswa_masuk`, `jumlah_siswa_keluar`) VALUES
-(2, 1, 2020, 1, 1, 1),
-(3, 1, 2019, 100, 100, 0),
-(8, 1, 2020, 1, 1, 1);
+insert  into `tb_jumlahsiswa`(`id_jumlahsiswa`,`id_sekolah`,`tahun`,`jumlah_siswa`,`jumlah_siswa_masuk`,`jumlah_siswa_keluar`) values (2,1,2020,1,1,1),(3,1,2019,100,100,0),(8,1,2020,1,1,1);
 
--- --------------------------------------------------------
+/*Table structure for table `tb_mapel` */
 
---
--- Table structure for table `tb_mapel`
---
+DROP TABLE IF EXISTS `tb_mapel`;
 
 CREATE TABLE `tb_mapel` (
-  `id_mapel` int(11) NOT NULL,
+  `id_mapel` int(11) NOT NULL AUTO_INCREMENT,
   `id_sekolah` int(11) NOT NULL,
   `id_guru` int(11) NOT NULL,
-  `matapelajaran` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `matapelajaran` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_mapel`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_mapel`
---
+/*Data for the table `tb_mapel` */
 
-INSERT INTO `tb_mapel` (`id_mapel`, `id_sekolah`, `id_guru`, `matapelajaran`) VALUES
-(5, 1, 2, 'b'),
-(6, 1, 2, 'c'),
-(7, 1, 2, 'v');
+insert  into `tb_mapel`(`id_mapel`,`id_sekolah`,`id_guru`,`matapelajaran`) values (5,1,2,'b'),(6,1,2,'c'),(7,1,2,'v');
 
--- --------------------------------------------------------
+/*Table structure for table `tb_pengumuman` */
 
---
--- Table structure for table `tb_pengumuman`
---
+DROP TABLE IF EXISTS `tb_pengumuman`;
 
 CREATE TABLE `tb_pengumuman` (
-  `id_pengumuman` int(11) NOT NULL,
+  `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT,
   `judul` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
-  `lampiran` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `lampiran` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_pengumuman`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_pengumuman`
---
+/*Data for the table `tb_pengumuman` */
 
-INSERT INTO `tb_pengumuman` (`id_pengumuman`, `judul`, `deskripsi`, `lampiran`) VALUES
-(6, 'c', 'c', '6.pdf');
+insert  into `tb_pengumuman`(`id_pengumuman`,`judul`,`deskripsi`,`lampiran`) values (6,'c','c','6.pdf');
 
--- --------------------------------------------------------
+/*Table structure for table `tb_sekolah` */
 
---
--- Table structure for table `tb_sekolah`
---
+DROP TABLE IF EXISTS `tb_sekolah`;
 
 CREATE TABLE `tb_sekolah` (
   `id_sekolah` int(11) NOT NULL,
@@ -159,25 +123,20 @@ CREATE TABLE `tb_sekolah` (
   `jenjang` varchar(6) NOT NULL,
   `akreditasi` varchar(2) NOT NULL,
   `longtitude` double NOT NULL,
-  `latitude` double NOT NULL
+  `latitude` double NOT NULL,
+  PRIMARY KEY (`id_sekolah`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_sekolah`
---
+/*Data for the table `tb_sekolah` */
 
-INSERT INTO `tb_sekolah` (`id_sekolah`, `nama`, `alamat`, `telp`, `status`, `email`, `keterangan`, `jenis`, `rayon`, `jenjang`, `akreditasi`, `longtitude`, `latitude`) VALUES
-(1, 'a', 'a', 1, 'a', 'blankamade@gmail.com', 'a', 'Swasta', 'a', 'TK', 'A', 41.40338, 2.17403),
-(2, 'coba2', 'coba2', 2, 'Sukses2', 'blankamade@gmail.com', 'coba2', 'Swasta', 'coba2', 'SD', 'B', 2, 2);
+insert  into `tb_sekolah`(`id_sekolah`,`nama`,`alamat`,`telp`,`status`,`email`,`keterangan`,`jenis`,`rayon`,`jenjang`,`akreditasi`,`longtitude`,`latitude`) values (1,'a','a',1,'a','blankamade@gmail.com','a','Swasta','a','TK','A',41.40338,2.17403),(2,'coba2','coba2',2,'Sukses2','blankamade@gmail.com','coba2','Swasta','coba2','SD','B',2,2);
 
--- --------------------------------------------------------
+/*Table structure for table `tb_siswa` */
 
---
--- Table structure for table `tb_siswa`
---
+DROP TABLE IF EXISTS `tb_siswa`;
 
 CREATE TABLE `tb_siswa` (
-  `nis` int(11) NOT NULL,
+  `nis` int(11) NOT NULL AUTO_INCREMENT,
   `id_sekolah` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `alamat` varchar(255) NOT NULL,
@@ -191,171 +150,50 @@ CREATE TABLE `tb_siswa` (
   `status_masuk` varchar(20) NOT NULL,
   `status_keluar` varchar(20) NOT NULL,
   `agama` varchar(10) NOT NULL,
-  `kewarganegaraan` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `kewarganegaraan` varchar(20) NOT NULL,
+  PRIMARY KEY (`nis`)
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_siswa`
---
+/*Data for the table `tb_siswa` */
 
-INSERT INTO `tb_siswa` (`nis`, `id_sekolah`, `nama`, `alamat`, `telp`, `kelas`, `jeniskelamin`, `tempat_lahir`, `tanggal_lahir`, `tanggal_masuk`, `tanggal_keluar`, `status_masuk`, `status_keluar`, `agama`, `kewarganegaraan`) VALUES
-(1, 1, 'coba2', 'coba2', '1', 'c', 'pria', 'Denpasar', '2020-12-05', '2020-12-05', '2020-12-05', 'coba', 'coba', 'coba', 'coba');
+insert  into `tb_siswa`(`nis`,`id_sekolah`,`nama`,`alamat`,`telp`,`kelas`,`jeniskelamin`,`tempat_lahir`,`tanggal_lahir`,`tanggal_masuk`,`tanggal_keluar`,`status_masuk`,`status_keluar`,`agama`,`kewarganegaraan`) values (1,1,'coba2','coba2','1','c','pria','Denpasar','2020-12-05','2020-12-05','2020-12-05','coba','coba','coba','coba'),(123,1,'asd','asd','123','123','Laki-laki','123','2021-02-08','2021-02-10','2021-02-25','Siswa Baru','','Hindu','qwe');
 
--- --------------------------------------------------------
+/*Table structure for table `tb_staff` */
 
---
--- Table structure for table `tb_staff`
---
+DROP TABLE IF EXISTS `tb_staff`;
 
 CREATE TABLE `tb_staff` (
-  `id_staff` int(11) NOT NULL,
+  `id_staff` int(11) NOT NULL AUTO_INCREMENT,
   `id_sekolah` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `telp` varchar(15) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `jabatan` varchar(50) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `jeniskelamin` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `jeniskelamin` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_staff`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_staff`
---
+/*Data for the table `tb_staff` */
 
-INSERT INTO `tb_staff` (`id_staff`, `id_sekolah`, `nama`, `telp`, `alamat`, `jabatan`, `status`, `jeniskelamin`) VALUES
-(1, 1, 'ab', '12', 'cobab', 'staffb', 'ab', 'pria');
+insert  into `tb_staff`(`id_staff`,`id_sekolah`,`nama`,`telp`,`alamat`,`jabatan`,`status`,`jeniskelamin`) values (1,1,'ab','12','cobab','staffb','ab','pria');
 
--- --------------------------------------------------------
+/*Table structure for table `tb_user` */
 
---
--- Table structure for table `tb_user`
---
+DROP TABLE IF EXISTS `tb_user`;
 
 CREATE TABLE `tb_user` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_user`
---
+/*Data for the table `tb_user` */
 
-INSERT INTO `tb_user` (`id_user`, `username`, `password`) VALUES
-(1, 'pegawai', 'pegawai'),
-(2, 'kadis', 'kadis');
+insert  into `tb_user`(`id_user`,`username`,`password`) values (1,'pegawai','pegawai'),(2,'kadis','kadis');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tb_guru`
---
-ALTER TABLE `tb_guru`
-  ADD PRIMARY KEY (`id_guru`);
-
---
--- Indexes for table `tb_inventaris`
---
-ALTER TABLE `tb_inventaris`
-  ADD PRIMARY KEY (`id_inventaris`);
-
---
--- Indexes for table `tb_jumlahsiswa`
---
-ALTER TABLE `tb_jumlahsiswa`
-  ADD PRIMARY KEY (`id_jumlahsiswa`);
-
---
--- Indexes for table `tb_mapel`
---
-ALTER TABLE `tb_mapel`
-  ADD PRIMARY KEY (`id_mapel`);
-
---
--- Indexes for table `tb_pengumuman`
---
-ALTER TABLE `tb_pengumuman`
-  ADD PRIMARY KEY (`id_pengumuman`);
-
---
--- Indexes for table `tb_sekolah`
---
-ALTER TABLE `tb_sekolah`
-  ADD PRIMARY KEY (`id_sekolah`);
-
---
--- Indexes for table `tb_siswa`
---
-ALTER TABLE `tb_siswa`
-  ADD PRIMARY KEY (`nis`);
-
---
--- Indexes for table `tb_staff`
---
-ALTER TABLE `tb_staff`
-  ADD PRIMARY KEY (`id_staff`);
-
---
--- Indexes for table `tb_user`
---
-ALTER TABLE `tb_user`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tb_guru`
---
-ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tb_inventaris`
---
-ALTER TABLE `tb_inventaris`
-  MODIFY `id_inventaris` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tb_jumlahsiswa`
---
-ALTER TABLE `tb_jumlahsiswa`
-  MODIFY `id_jumlahsiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `tb_mapel`
---
-ALTER TABLE `tb_mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `tb_pengumuman`
---
-ALTER TABLE `tb_pengumuman`
-  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `tb_siswa`
---
-ALTER TABLE `tb_siswa`
-  MODIFY `nis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tb_staff`
---
-ALTER TABLE `tb_staff`
-  MODIFY `id_staff` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tb_user`
---
-ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
