@@ -16,15 +16,7 @@
             </div>
             <div class="form-group row">
             <label for="inputPassword"  class="col-sm-2 col-form-label">Id Sekolah</label>
-                <div class="col-sm-10">
-                    <select  class="form-control" name="id_sekolah">
-                    <optgroup label="(empty)" id="inputPassword">
-                    <?php foreach ($sekolah as $sekolah):?>
-                     <option value="<?php echo $sekolah->id_sekolah?>"><?php echo $sekolah->nama?> </option>
-                     <?php endforeach?>
-				    </optgroup>
-                   </select>
-                </div>
+                <input type="text" class="form-control" name="id_sekolah" id="inputPassword" value= "<?php echo $this->session->userdata('id_sekolah')?>" readonly placeholder="<?php $this->session->userdata('idsekolah')?>">
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">ID Sekolah</label>
@@ -89,7 +81,7 @@
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">tanggal lahir</label>
                 <div class="col-sm-10">
-                <input type="date" class="form-control" name="tanggal_lahir" id="inputPassword"value="<?php echo $guru->tanggal_lahir?>" >
+                <input type="datetime" class="form-control" name="tanggal_lahir" id="inputPassword"value="<?php echo $guru->tanggal_lahir?>" >
                 </div>
             </div>
             <div class="form-group row">

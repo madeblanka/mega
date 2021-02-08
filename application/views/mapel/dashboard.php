@@ -3,9 +3,9 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data mapel</h6>
-            <a href="<?php echo site_url('mapel/tambah/') ?>"
+            <?php if($this->session->userdata('role') !="kadis"): ?> <a href="<?php echo site_url('mapel/tambah/') ?>"
                 href="#!"  class="btn btn-outline-success"><strong>Tambah</strong></a>
-        </div>
+        </div><?php endif ?>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -29,9 +29,9 @@
                           <td>
                           <?php if($this->session->userdata('role') =="kadis"): ?>  
                           <a href="<?php echo site_url('siswa/print/') ?>"
-                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a>    
+                           href="#!" class="btn btn-small text-secondary"><i class="fas fa-trash"></i> Print</a> <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>    
                           <a href="<?php echo site_url('mapel/edit/'.$mapel->id_mapel) ?>"
-                           <?php endif ?><?php if($this->session->userdata('role') !="kadis"): ?>  
+                            
                            href="#!" class="btn btn-small text-primary"><i class="fas fa-edit"></i> Edit</a>
                            <a href="<?php echo site_url('mapel/delete/'.$mapel->id_mapel) ?>"
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>

@@ -3,9 +3,9 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data jumlah siswa</h6>
-            <a href="<?php echo site_url('jumlahsiswa/tambah/') ?>"
+           <?php if($this->session->userdata('role') !="kadis"): ?>  <a href="<?php echo site_url('jumlahsiswa/tambah/') ?>"
                 href="#!"  class="btn btn-outline-success"><strong>Tambah</strong></a>
-        </div>
+        </div><?php endif ?>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

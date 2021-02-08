@@ -69,7 +69,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <?php if ($this->session->userdata('role') == "kadis" || $this->session->userdata('role') == "pegawai") : ?>
+            <!-- <?php if ($this->session->userdata('role') == "kadis" || $this->session->userdata('role') == "pegawai") : ?> -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                         <i class="fas fa-fw fa-folder"></i>
@@ -91,7 +91,7 @@
                                 <a class="collapse-item" href="<?php echo site_url('user/index') ?>">Tabel User</a>
                                 <a class="collapse-item" href="<?php echo site_url('pengumuman/index') ?>">Tabel Pengumuman</a>
                             <?php endif ?>
-                            <?php if ($this->session->userdata('role') == "pegawai") : ?>
+                            <?php if ($this->session->userdata('role') != "kadis") : ?>
                                 <a class="collapse-item" href="<?php echo site_url('guru/index') ?>">Tabel Guru</a>
                                 <a class="collapse-item" href="<?php echo site_url('inventaris/index') ?>">Tabel Inventaris</a>
                                 <a class="collapse-item" href="<?php echo site_url('sekolah/index') ?>">Tabel Sekolah</a>
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </li>
-            <?php endif ?>
+          <!--   <?php endif ?> -->
             <?php if ($this->session->userdata('role') == "TK" || $this->session->userdata('role') == "SD") : ?>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -118,7 +118,7 @@
                             <h6 class="collapse-header">List :</h6>
                             <a class="collapse-item" href="<?php echo site_url('guru/jenis') ?>">Tabel Guru</a>
                             <a class="collapse-item" href="<?php echo site_url('inventaris/jenis') ?>">Tabel Inventaris</a>
-                            <!-- <a class="collapse-item" href="<?php echo site_url('sekolah/jenis') ?>">Tabel Sekolah</a> -->
+                            <a class="collapse-item" href="<?php echo site_url('sekolah/jenis') ?>">Tabel Sekolah</a>
                             <a class="collapse-item" href="<?php echo site_url('siswa/jenis') ?>">Tabel Siswa</a>
                             <a class="collapse-item" href="<?php echo site_url('staff/jenis') ?>">Tabel Staff</a>
                             <a class="collapse-item" href="<?php echo site_url('jumlahsiswa/jenis') ?>">Tabel Jumlah Siswa</a>
