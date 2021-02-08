@@ -124,12 +124,13 @@ CREATE TABLE `tb_sekolah` (
   `akreditasi` varchar(2) NOT NULL,
   `longtitude` double NOT NULL,
   `latitude` double NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_sekolah`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_sekolah` */
 
-insert  into `tb_sekolah`(`id_sekolah`,`nama`,`alamat`,`telp`,`status`,`email`,`keterangan`,`jenis`,`rayon`,`jenjang`,`akreditasi`,`longtitude`,`latitude`) values (1,'a','a',1,'a','blankamade@gmail.com','a','Swasta','a','TK','A',41.40338,2.17403),(2,'coba2','coba2',2,'Sukses2','blankamade@gmail.com','coba2','Swasta','coba2','SD','B',2,2);
+insert  into `tb_sekolah`(`id_sekolah`,`nama`,`alamat`,`telp`,`status`,`email`,`keterangan`,`jenis`,`rayon`,`jenjang`,`akreditasi`,`longtitude`,`latitude`,`password`) values (1,'a','a',1,'a','blankamade@gmail.com','a','Swasta','a','TK','A',41.40338,2.17403,'123'),(2,'coba2','coba2',2,'Sukses2','blankamade@gmail.com','coba2','Swasta','coba2','SD','B',2,2,'123');
 
 /*Table structure for table `tb_siswa` */
 

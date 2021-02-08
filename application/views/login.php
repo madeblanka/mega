@@ -95,6 +95,8 @@
         <div class="form-group">
     <label for="username">ID Sekolah</label>
     <input type="text" class="form-control" id="username" name="id_sekolah" placeholde="ID SEKOLAH" required="">
+    <label for="password">Password</label>
+    <input type="password12" class="form-control" id="password" name="password" placeholde="Password" required="">
         </div>
     <button type="submit" class="btn btn-success" name="button">login</button>
     <!-- <input class="btn btn-success" type="submit" name="btn" value="login" data-dismiss="modal" /> -->

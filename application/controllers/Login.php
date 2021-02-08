@@ -54,13 +54,14 @@ class Login extends CI_Controller
     public function loginsekolah()
     {
         $id_sekolah = $this->input->post('id_sekolah');
+        $password = $this->input->post('password');
         $where = array(
             'id_sekolah' => $id_sekolah
         );
 
         $cek = $this->Sekolah_model->getById($id_sekolah);
         // var_dump($cek); exit();
-        if ($cek != null) {
+        if ($cek != null && $password == $cek->password) {
 
             $data_session = array(
                 'id_sekolah' => $id_sekolah,
