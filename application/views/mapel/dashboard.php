@@ -12,7 +12,6 @@
                         <thead>
                             <tr>
                                <th>id mapel</th>
-                               <th>id sekolah</th>
                                <th>id guru</th>
                                <th>mata pelajaran</th>
                                <th>Actoin</th>
@@ -23,7 +22,6 @@
                   <tbody>
                       <tr>
                           <td><?php echo $mapel->id_mapel?></td>
-                          <td><?php echo $mapel->id_sekolah?></td>
                           <td><?php echo $mapel->id_guru?></td>
                           <td><?php echo $mapel->matapelajaran?></td>                           
                           <td>

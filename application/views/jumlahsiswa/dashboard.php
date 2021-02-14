@@ -12,7 +12,6 @@
                         <thead>
                             <tr>
                                <th>id jumlah siswa</th>
-                               <th>id sekolah</th>
                                <th>tahun</th>
                                <th>jumlah siswa</th>
                                <th>jumlah siswa masuk</th>
@@ -24,7 +23,6 @@
                   <tbody>
                       <tr>
                           <td><?php echo $jumlahsiswa->id_jumlahsiswa?></td>
-                          <td><?php echo $jumlahsiswa->id_sekolah?></td>
                           <td><?php echo $jumlahsiswa->tahun?></td>
                           <td><?php echo $jumlahsiswa->jumlah_siswa?></td>
                           <td><?php echo $jumlahsiswa->jumlah_siswa_masuk?></td>    
