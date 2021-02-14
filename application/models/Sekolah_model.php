@@ -15,8 +15,7 @@ class Sekolah_model extends CI_Model
     public $rayon;
 	public $jenjang;
 	public $akreditasi;
-    public $longtitude;
-    public $latitude;
+    public $latLong;
 
     public function loginsekolah($where){
         $this->db->where($where);
@@ -95,8 +94,9 @@ class Sekolah_model extends CI_Model
         $this->rayon = $post["rayon"];
         $this->jenjang = $post["jenjang"];
         $this->akreditasi = $post["akreditasi"];
-        $this->longtitude = $post["longtitude"];
-        $this->latitude = $post["latitude"];
+        $bersihkan = trim($post["latLong"], "(");
+        $bersihkan = trim($bersihkan, ")");
+        $this->latLong = $bersihkan;
         return $this->db->insert($this->_table, $this);
     }
 
@@ -114,8 +114,9 @@ class Sekolah_model extends CI_Model
         $this->rayon = $post["rayon"];
         $this->jenjang = $post["jenjang"];
         $this->akreditasi = $post["akreditasi"];
-        $this->longtitude = $post["longtitude"];
-        $this->latitude = $post["latitude"];
+        $bersihkan = trim($post["latLong"], "(");
+        $bersihkan = trim($bersihkan, ")");
+        $this->latLong = $bersihkan;
         return $this->db->update($this->_table, $this, array('id_sekolah' => $post['id_sekolah']));
     }
 

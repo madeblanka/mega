@@ -1,3 +1,66 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYt4euoxxYMzmLijAQW6Nt9ymCLZ8xGc&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script>
+      function initMap() {
+        const myLatlng = { lat: -8.656196, lng: 115.217643 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: myLatlng,
+        });
+        // Create the initial InfoWindow.
+        let infoWindow = new google.maps.InfoWindow({
+          content: "Click the map to get Lat/Lng!",
+          position: myLatlng,
+        });
+        infoWindow.open(map);
+        // Configure the click listener.
+        map.addListener("click", (mapsMouseEvent) => {
+          document.getElementById("latLong").value = mapsMouseEvent.latLng;
+          // Close the current InfoWindow.
+          infoWindow.close();
+          // Create a new InfoWindow.
+          infoWindow = new google.maps.InfoWindow({
+            position: mapsMouseEvent.latLng,
+          });
+          infoWindow.setContent(
+            JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+          );
+          infoWindow.open(map);
+        });
+
+        const myLatlng2 = { lat: -8.656196, lng: 115.217643 };
+        const map2 = new google.maps.Map(document.getElementById("map2"), {
+          zoom: 15,
+          center: myLatlng2,
+        });
+        // Create the initial InfoWindow.
+        let infoWindow2 = new google.maps.InfoWindow({
+          content: "Click the map to get Lat/Lng!",
+          position: myLatlng2,
+        });
+        infoWindow2.open(map2);
+        // Configure the click listener.
+        map2.addListener("click", (mapsMouseEvent) => {
+          document.getElementById("delivery_coordinate").value = mapsMouseEvent.latLng;
+          // Close the current InfoWindow.
+          infoWindow2.close();
+          // Create a new InfoWindow.
+          infoWindow2 = new google.maps.InfoWindow({
+            position: mapsMouseEvent.latLng,
+          });
+          infoWindow2.setContent(
+            JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+          );
+          infoWindow2.open(map2);
+        });
+
+      }
+
+ 
+    </script>
 <?php $this->load->view("_partials/head.php") ?>
 <?php $this->load->view("_partials/sidebar.php") ?>
     <div class="card shadow mb-4">
@@ -94,21 +157,16 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">longtitude</label>
+                <label for="inputPassword" class="col-sm-2 col-form-label">Latitude Longtitude</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="longtitude" id="inputPassword" value="<?php echo $sekolah->longtitude?>">
+                <input type="text" class="form-control" name="latLong" id="latLong" value="<?php echo $sekolah->latLong?>">
+                <br>
+                <div id="map" style="height:500px;"></div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">latitude</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" name="latitude" id="inputPassword" value="<?php echo $sekolah->latitude?>">
-                </div>
+                
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
             </div>
-     </div>
-
-       
+     </div>      
 <?php $this->load->view("_partials/footer.php") ?>
