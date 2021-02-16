@@ -22,8 +22,7 @@
                                <th>rayon</th>
                                <th>jenjang</th>
                                <th>akreditasi</th>
-                               <th>longtitude</th>
-                               <th>latitude</th>
+                               <th>Latitude Longtitude</th>
                                <th>action</th>
                             </tr>
                         </thead>
@@ -41,8 +40,7 @@
                           <td><?php echo $sekolah->rayon?></td>
                           <td><?php echo $sekolah->jenjang?></td>
                           <td><?php echo $sekolah->akreditasi?></td>
-                          <td><?php echo $sekolah->longtitude?></td>       
-                          <td><?php echo $sekolah->latitude?></td>      
+                          <td><?php echo $sekolah->latLong?></td>           
                                                  
                           <td> <?php if($this->session->userdata('role') =="kadis"): ?>  
                           <a href="<?php echo site_url('sekolah/print/') ?>"
@@ -55,7 +53,7 @@
                            onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                            <?php endif ?>
 
-                           <a target="_blank" href="<?php echo 'https://www.google.com/maps/place/'.$sekolah->longtitude.','.$sekolah->latitude; ?>" class="btn btn-small text-primary"><i class="fas fa-map-marked-alt"></i>Maps</a>
+                           <a target="_blank" href="<?php echo 'https://www.google.com/maps/place/'.$sekolah->latLong?>" class="btn btn-small text-primary"><i class="fas fa-map-marked-alt"></i>Maps</a>
                           </td>
                       </tr>
                 <?php endforeach?>
