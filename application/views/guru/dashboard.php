@@ -13,7 +13,6 @@
                         <thead>
                             <tr>
                                <th>Id Guru</th>
-                               <th>Id Sekolah</th>
                                <th>Nip</th>
                                <th>Nama</th>
                                <th>Email</th>
@@ -32,7 +31,6 @@
                   <tbody>
                       <tr>
                           <td><?php echo $guru->id_guru?></td>
-                          <td><?php echo $guru->id_sekolah?></td>
                           <td><?php echo $guru->nip?></td>
                           <td><?php echo $guru->nama?></td>
                           <td><?php echo $guru->email?></td>

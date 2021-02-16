@@ -12,7 +12,6 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                               <th>id sekolah</th>
                                <th>nis</th>
                                <th>nama</th>
                                <th>alamat</th>
@@ -33,7 +32,6 @@
                         <?php foreach ($siswa as $siswa): ?>
                   <tbody>
                       <tr>
-                          <td><?php echo $siswa->id_sekolah?></td>
                           <td><?php echo $siswa->nis?></td>
                           <td><?php echo $siswa->nama?></td>
                           <td><?php echo $siswa->alamat?></td>

@@ -13,7 +13,6 @@
                         <thead>
                             <tr>
                                <th>id staff</th>
-                               <th>id sekolah</th>
                                <th>nama</th>
                                <th>telp</th>
                                <th>alamat</th>
@@ -28,7 +27,6 @@
                   <tbody>
                       <tr>
                           <td><?php echo $staff->id_staff?></td>
-                          <td><?php echo $staff->id_sekolah?></td>
                           <td><?php echo $staff->nama?></td>
                           <td><?php echo $staff->telp?></td>
                           <td><?php echo $staff->alamat?></td>

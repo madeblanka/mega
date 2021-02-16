@@ -12,7 +12,6 @@
                         <thead>
                             <tr>
                                <th>id inventaris</th>
-                               <th>id sekolah</th>
                                <th>nama</th>
                                <th>status</th>
                                <th>jumlah</th>
@@ -26,7 +25,6 @@
                   <tbody>
                       <tr>
                           <td><?php echo $inventaris->id_inventaris?></td>
-                          <td><?php echo $inventaris->id_sekolah?></td>
                           <td><?php echo $inventaris->nama?></td>
                           <td><?php echo $inventaris->status?></td>
                           <td><?php echo $inventaris->jumlah?></td> 
